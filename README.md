@@ -1,6 +1,80 @@
 # AnimeCharacterParsing
 
 [繁體中文](#繁體中文) |[English](#English)
+#### [English](#English)
+
+## A Semi-Supervised Deep Co-Training Approach to Anime Character Parsing  
+
+
+### Introduction
+&nbsp; &nbsp; &nbsp;&nbsp;A method for parsing anime characters using semi-supervised semantic segmentation. Due to the high cost of labeling, we adopt semi-supervised learning. Our data set has only 1,153 images, and 1,017 images are used for training and 136 images are used for verification. A preview of the dataset is below.  
+![](https://i.imgur.com/o8V06jK.png)  
+&nbsp; &nbsp; &nbsp;&nbsp;The generated segmentation map can be used in any  application which needs semantic map. The most common one is the face generation and automatic coloring of anime characters using GAN. Related work such as [DanbooRegion](https://github.com/lllyasviel/DanbooRegion) provides non-semantic instance segmentation and it performs very good on flatten coloring.  
+&nbsp; &nbsp; &nbsp;&nbsp; This [paper](https://www.sysu-imsl.com/files/PG2021/line_art_colorization_pg2021_main.pdf) uses [tag2pix](https://github.com/blandocs/Tag2Pix) and 
+[DanbooRegion](https://github.com/lllyasviel/DanbooRegion), the instance segmentation with tags also has a good coloring effect. Our segmentation can offered more detailed semantic relationship. Since there is no complete datasets of animation segmentation, so we provide the dataset and the parsing method, and this is the motivation of this work.   
+&nbsp; &nbsp; &nbsp;&nbsp; The Github community also has two semantic segmentations for anime: [AniSeg](https://github.com/jerryli27/AniSeg) and [Anime-Semantic-Segmentation-GAN](https://github.com/pit-ray/Anime-Semantic-Segmentation-GAN), compared to these two projects, we can apply to more complex scene. The above two have many limit to usage, but we have almost none, as long as it is an illustration, we can output segmentation maps, and can generate more detailed segmentation.
+  
+&nbsp; &nbsp; &nbsp;&nbsp;
+
+## Approach
+
+- Wait for update
+
+## Dataset and model download
+- Wait for update
+
+## Class Definition  
+ ![](https://i.imgur.com/XQCPWCs.png)
+
+
+## Experimental Results
+&nbsp; &nbsp; &nbsp;&nbsp; We divide the experimental set into easy, medium and hard, and progress in order according to the degree of complexity, as defined in the following table:
+![](https://i.imgur.com/4dHkzNE.png)
+- 13-class experimental result
+     ![](https://i.imgur.com/PCAjdYY.png)
+- 16-class experimental result
+     ![](https://i.imgur.com/7cdKW2S.png)
+
+## Segmentation output
+**Can perform well in：**
+- Easy and medium difficulty in validation set
+- Any colored illustrution or sketch
+- Any artist style
+- Any background (no matter whit or complex background)  
+- Many people in one illustration 
+- Any occulusion  
+- Example reulsts of 13 classes (Input, Predict map, Ground Truth)：
+![](https://i.imgur.com/PEnYlG3.png)
+![](https://i.imgur.com/s4USR73.png)
+![](https://i.imgur.com/Mq5LAUc.png)
+![](https://i.imgur.com/T2jxWuP.png)
+![](https://i.imgur.com/PfMmq3Z.png)
+![](https://i.imgur.com/DbTuj8K.png)
+![](https://i.imgur.com/WKK75cJ.png)
+![](https://i.imgur.com/P7BFCTW.png)
+![](https://i.imgur.com/VFUhHlV.png)
+![](https://i.imgur.com/V6cAHSj.png)
+![](https://i.imgur.com/DlWLP8I.png)
+![](https://i.imgur.com/jP3c6gT.png)  
+  
+**Cannot perform well in：**  
+- Hard difficulty in validation set
+- Too small human body part or person
+- Non-human character
+- Complex light source
+- Example reulsts of 13 classes (Input, Predict map, Ground Truth)：
+![](https://i.imgur.com/ce8hz41.png)
+![](https://i.imgur.com/K6uJmqQ.png)
+![](https://i.imgur.com/MnOineG.jpg)
+![](https://i.imgur.com/MLIyVm8.png)
+![](https://i.imgur.com/XPuVD6F.jpg)
+![](https://i.imgur.com/zSE4vny.png)  
+
+ 
+TODO List
+- [ ] Upload training and validation dataset
+- [ ] Upload source code
+- [ ] Upload trained model
 
 
 #### [繁體中文](#繁體中文)
@@ -76,74 +150,5 @@ TODO List
 - [ ] 上傳訓練完成模型檔案
 --------------------------------------
 --------------------------------------
-#### [English](#English)
-
-## A Semi-Supervised Deep Co-Training Approach to Anime Character Parsing  
-
-
-### Introduction
-&nbsp; &nbsp; &nbsp;&nbsp;A method for parsing anime characters using semi-supervised semantic segmentation. Due to the high cost of labeling, we adopt semi-supervised learning. Our data set has only 1,153 images, and 1,017 images are used for training and 136 images are used for verification. A preview of the dataset is below.  
-![](https://i.imgur.com/o8V06jK.png)  
-&nbsp; &nbsp; &nbsp;&nbsp;The generated segmentation map can be used in any  application which needs semantic map. The most common one is the face generation and automatic coloring of anime characters using GAN. Related work such as [DanbooRegion](https://github.com/lllyasviel/DanbooRegion) provides non-semantic instance segmentation and it performs very good on flatten coloring.  
-&nbsp; &nbsp; &nbsp;&nbsp; This [paper](https://www.sysu-imsl.com/files/PG2021/line_art_colorization_pg2021_main.pdf) uses [tag2pix](https://github.com/blandocs/Tag2Pix) and 
-[DanbooRegion](https://github.com/lllyasviel/DanbooRegion), the instance segmentation with tags also has a good coloring effect. Our segmentation can offered more detailed semantic relationship. Since there is no complete datasets of animation segmentation, so we provide the dataset and the parsing method, and this is the motivation of this work.   
-&nbsp; &nbsp; &nbsp;&nbsp; The Github community also has two semantic segmentations for anime: [AniSeg](https://github.com/jerryli27/AniSeg) and [Anime-Semantic-Segmentation-GAN](https://github.com/pit-ray/Anime-Semantic-Segmentation-GAN), compared to these two projects, we can apply to more complex scene. The above two have many limit to usage, but we have almost none, as long as it is an illustration, we can output segmentation maps, and can generate more detailed segmentation.
-  
-&nbsp; &nbsp; &nbsp;&nbsp;
-
-
-
-## Class Definition  
- ![](https://i.imgur.com/XQCPWCs.png)
-
-
-## Experimental Results
-&nbsp; &nbsp; &nbsp;&nbsp; We divide the experimental set into easy, medium and hard, and progress in order according to the degree of complexity, as defined in the following table:
-![](https://i.imgur.com/4dHkzNE.png)
-- 13-class experimental result
-     ![](https://i.imgur.com/PCAjdYY.png)
-- 16-class experimental result
-     ![](https://i.imgur.com/7cdKW2S.png)
-
-## Segmentation output
-**Can perform well in：**
-- Easy and medium difficulty in validation set
-- Any colored illustrution or sketch
-- Any artist style
-- Any background (no matter whit or complex background)  
-- Many people in one illustration 
-- Any occulusion  
-- Example reulsts of 13 classes (Input, Predict map, Ground Truth)：
-![](https://i.imgur.com/PEnYlG3.png)
-![](https://i.imgur.com/s4USR73.png)
-![](https://i.imgur.com/Mq5LAUc.png)
-![](https://i.imgur.com/T2jxWuP.png)
-![](https://i.imgur.com/PfMmq3Z.png)
-![](https://i.imgur.com/DbTuj8K.png)
-![](https://i.imgur.com/WKK75cJ.png)
-![](https://i.imgur.com/P7BFCTW.png)
-![](https://i.imgur.com/VFUhHlV.png)
-![](https://i.imgur.com/V6cAHSj.png)
-![](https://i.imgur.com/DlWLP8I.png)
-![](https://i.imgur.com/jP3c6gT.png)  
-  
-**Cannot perform well in：**  
-- Hard difficulty in validation set
-- Too small human body part or person
-- Non-human character
-- Complex light source
-- Example reulsts of 13 classes (Input, Predict map, Ground Truth)：
-![](https://i.imgur.com/ce8hz41.png)
-![](https://i.imgur.com/K6uJmqQ.png)
-![](https://i.imgur.com/MnOineG.jpg)
-![](https://i.imgur.com/MLIyVm8.png)
-![](https://i.imgur.com/XPuVD6F.jpg)
-![](https://i.imgur.com/zSE4vny.png)  
-
- 
-TODO List
-- [ ] Upload training and validation dataset
-- [ ] Upload source code
-- [ ] Upload trained model
 
 
